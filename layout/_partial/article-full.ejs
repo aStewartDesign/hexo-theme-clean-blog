@@ -14,15 +14,17 @@
                         <%- item.subtitle %>
                     </h2>
                     <% } %>
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        <% if(item.author) { %>
-                            Posted by <%- item.author %> on
-                        <% } %>
-                        <% if(item.date) { %>
-                            <%= item.date.format(config.date_format) %>
-                        <% } %>
-                    </span>
+                    <% if(!page.hideMeta) { %>
+                        <span class="meta">
+                            <!-- Date and Author -->
+                            <% if(item.author) { %>
+                                Posted by <%- item.author %> on
+                            <% } %>
+                            <% if(item.date) { %>
+                                <%= item.date.format(config.date_format) %>
+                            <% } %>
+                        </span>
+                    <% } %>
                 </div>
             </div>
         </div>
